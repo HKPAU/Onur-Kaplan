@@ -8,6 +8,7 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-+0n0xVW2eSR5OomGNYDnhzAbDsOXxcvSN1TPprVMTNDbiYZCxYbOOl7+AMvyTG2x" crossorigin="anonymous"></head>
     <link rel="stylesheet" href="OnurKaplan.css">
     <link rel="icon" type="image/png" href="Images/question.png"/>
+    <script src="jquery/jquery-3.6.0.min.js"></script>
 <body>
     
     <div id="MainDiv">
@@ -52,10 +53,10 @@
                                     <div id="FirstImageDiv">
                                         <table style="margin-top: 140px;margin-left: 110px;">
                                             <tr>
-                                                <td><img src="Images/camera.png" alt=""></td>
+                                                <td><img style="cursor: pointer;" src="Images/camera.png" alt=""></td>
                                             </tr>
                                             <tr>
-                                                <td style="font-size: 20px; font-weight: bold;">Yeni Fotoğraf Ekle</td>
+                                                <td style="font-size: 20px; font-weight: bold;cursor: pointer;">Yeni Fotoğraf Ekle</td>
                                             </tr>
                                         </table>
                                     </div>
@@ -65,10 +66,10 @@
                                     <div id="SecondImageDiv">
                                         <table style="margin-top: 140px;margin-left: 110px;">
                                             <tr>
-                                                <td><img src="Images/camera.png" alt=""></td>
+                                                <td><img style="cursor: pointer;" src="Images/camera.png" alt=""></td>
                                             </tr>
                                             <tr>
-                                                <td style="font-size: 20px; font-weight: bold;">Yeni Fotoğraf Ekle</td>
+                                                <td style="font-size: 20px; font-weight: bold;cursor: pointer;">Yeni Fotoğraf Ekle</td>
                                             </tr>
                                         </table>
                                     </div>
@@ -83,14 +84,14 @@
                         <table style="width: 1000px;">
                             <td style="width: 130px;">&nbsp;</td>
                             <td style="width: 35px;text-align: right;">
-                                <img style="width: 35px; height: 35px;" src="Images/like.png" alt="">
+                                <img style="width: 35px; height: 35px;cursor: pointer;" id="Like1" src="Images/like.png" alt="">
                             </td>
-                            <td style="width: 5px; padding-top: 10px; text-align: left;">15</td>
+                            <td id="LikeValue1" style="width: 5px; padding-top: 10px; text-align: left;">0</td>
                             <td style="width: 200px;">&nbsp;</td>
                             <td style="width: 35px;text-align: right;">
-                                <img style="width: 35px; height: 35px;" src="Images/like.png" alt="">
+                                <img style="width: 35px; height: 35px;cursor: pointer;" id="Like2" src="Images/like.png" alt="">
                             </td>
-                            <td style="width: 5px; padding-top: 10px;text-align: left;">15</td>
+                            <td id="LikeValue2" style="width: 5px; padding-top: 10px;text-align: left;">0</td>
                         </table>
                     </td>
                 </tr>
@@ -101,7 +102,16 @@
                     <td>
                         <table style="width: 1000px;">
                             <tr>
-                                <td style="width: 600px; padding-left: 260px;"><textarea style="resize: none; border-radius: 15px;background-color: #F9F4D7; border: 2px solid #004447;" cols="40" rows="5" placeholder="Yorumla"></textarea></td>
+                                <td style="width: 600px; padding-left: 260px;"><textarea style="resize: none; border-radius: 15px;background-color: #F9F4D7; border: 2px solid #004447; outline: none;" cols="40" rows="5" placeholder="Yorumla"></textarea></td>
+                            </tr>
+                        </table>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <table style="width: 1000px;">
+                            <tr>
+                                <td style="padding-left: 470px;"><button class="btn btn-success"><b>Yorum Yap</b></button></td>
                             </tr>
                         </table>
                     </td>
@@ -111,6 +121,21 @@
     </div>
 
 
+<script type="text/javascript">
+    $(document).ready(function(){
+        var Like1Value  = 0;
+        $("#Like1").click(function(){
+            Like1Value++;
+            $("#LikeValue1").text(Like1Value);
+        });
 
+
+        var Like2Value  = 0;
+        $("#Like2").click(function(){
+            Like2Value++;
+            $("#LikeValue2").text(Like2Value);
+        });
+    });
+</script>
 </body>
 </html>
